@@ -1,0 +1,7 @@
+{
+  "max-line-lenght":150,
+  "singleQuote": true,
+  "arrowParens": "always",
+  "trailingComma": "all",
+  "tabWidth": 2
+}

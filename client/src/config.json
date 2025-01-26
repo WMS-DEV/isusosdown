@@ -1,0 +1,17 @@
+{
+  "appName": "isUSOS↓?",
+  "authorName": "WMS_DEV",
+
+  "joinUsFormLink": "https://docs.google.com/forms/d/e/1FAIpQLScIlTZt01K9fOkvvqJfm-taFEVW32Tqt5e5yd-CUDEBDnW1gQ/viewform",
+  "wmsDevWebsiteLink": "https://wmsdev.pl",
+
+  "csvFileName": "isUsosDown",
+  "headtoHeadLabel": "H2H",
+  "headToHeadNumberChartTitle": "Liczba awarii",
+  "headToHeadNumberChartLabel": "Liczba awarii",
+  "headToHeadLengthChartTitle": "Czas trwania awarii",
+  "headToHeadLengthChartLabel": "Czas trwania awarii",
+  "usosServiceName": "USOS",
+  "minimumDowntimeDuration": 10000,
+  "defaultGroupId": 1
+}
