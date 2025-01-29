@@ -1,7 +1,7 @@
 # 📈 isUsosDown
 
 <p>
-  <img src="https://i.imgur.com/B1tCV7i.png" alt="isUsosDown">
+  <img src="https://i.imgur.com/A6aTPrK.png" alt="isUsosDown">
 </p>
 
 Welcome to the `isUsosDown` project repository! This project is a web application for real-time monitoring of the availability of IT services of Polish universities, along with detailed statistics.
