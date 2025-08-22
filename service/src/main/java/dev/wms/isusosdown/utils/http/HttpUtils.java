@@ -5,7 +5,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 import java.io.IOException;
-import java.net.SocketTimeoutException;
 import java.time.Duration;
 
 public class HttpUtils {

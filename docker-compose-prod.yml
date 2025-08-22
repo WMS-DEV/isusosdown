@@ -1,6 +1,5 @@
 services:
   client:
-    container_name: client
     image: ghcr.io/wms-dev/isusosdown-client:latest
     restart: always
     build:
@@ -15,7 +14,6 @@ services:
       - VIRTUAL_PORT=3000
 
   server:
-    container_name: server
     image: ghcr.io/wms-dev/isusosdown-server:latest
     restart: unless-stopped
     build:

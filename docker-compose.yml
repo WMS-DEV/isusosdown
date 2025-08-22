@@ -1,5 +1,6 @@
 services:
   client:
+    image: ghcr.io/wms-dev/isusosdown-client:latest
     restart: always
     build:
       context: ./client
@@ -11,6 +12,7 @@ services:
       - "3000:3000"
 
   server:
+    image: ghcr.io/wms-dev/isusosdown-server:latest
     restart: unless-stopped
     build:
       context: ./service

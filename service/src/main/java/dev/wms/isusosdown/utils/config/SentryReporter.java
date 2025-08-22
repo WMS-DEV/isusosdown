@@ -2,12 +2,12 @@ package dev.wms.isusosdown.utils.config;
 
 
 import com.mysql.cj.util.StringUtils;
-import io.sentry.Scope;
+import io.sentry.IScope;
 import io.sentry.Sentry;
 import io.sentry.UserFeedback;
 import io.sentry.protocol.SentryId;
 import io.sentry.protocol.User;
-import org.jetbrains.annotations.NotNull;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -44,7 +44,7 @@ public class SentryReporter implements ExceptionHandler {
         Sentry.captureMessage(message);
     }
 
-    private void setUser(Scope scope) {
+    private void setUser(IScope scope) {
         User user = new User();
         user.setIpAddress(getIp());
         user.setUsername(getUsername());

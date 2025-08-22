@@ -1,7 +1,7 @@
 package dev.wms.isusosdown.trackedService.repository;
 
 import dev.wms.isusosdown.trackedService.entity.TrackedService;
-import org.jetbrains.annotations.NotNull;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
