@@ -1,0 +1,53 @@
+services:
+  client:
+    container_name: client
+    image: ghcr.io/wms-dev/isusosdown-client:latest
+    restart: always
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_SENTRY_DSN=${CLIENT_SENTRY_DSN}
+        - REACT_APP_BACKEND_URL=${REACT_APP_BACKEND_URL}
+    environment:
+      - VIRTUAL_HOST=${CLIENT_HOST}
+      - LETSENCRYPT_HOST=${CLIENT_HOST}
+      - VIRTUAL_PORT=3000
+
+  server:
+    container_name: server
+    image: ghcr.io/wms-dev/isusosdown-server:latest
+    restart: unless-stopped
+    build:
+      context: ./service
+      dockerfile: Dockerfile
+    environment:
+        - SERVICE_DB_URL=${SERVICE_DB_URL}
+        - SERVICE_DB_LOGIN=${SERVICE_DB_LOGIN}
+        - SERVICE_DB_PASSWORD=${SERVICE_DB_PASSWORD}
+        - SERVICE_SENTRY_DSN=${SERVICE_SENTRY_DSN}
+        - LETSENCRYPT_HOST=${SERVER_HOST}
+        - VIRTUAL_HOST=${SERVER_HOST}
+        - VIRTUAL_PORT=${SERVER_PORT}
+    depends_on:
+      - mysqldb
+
+  mysqldb:
+    build:
+      context: ./service/db
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: ${SERVICE_DB_PASSWORD}
+      MYSQL_USER: ${SERVICE_DB_LOGIN}
+      MYSQL_PASSWORD: ${SERVICE_DB_PASSWORD}
+      MYSQL_DATABASE: ${SERVICE_DB_NAME}
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
+
+networks:
+  default:
+    name: isusosdown-network
+    external: true

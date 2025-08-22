@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.2</version>
+        <version>3.4.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>dev.wms</groupId>
@@ -15,15 +15,15 @@
     <description>isusosdown</description>
     <properties>
         <java.version>21</java.version>
-        <sentry.version>6.13.1</sentry.version>
+        <sentry.version>8.19.1</sentry.version>
         <mysql.version>8.0.33</mysql.version>
-        <joda-time.version>2.13.0</joda-time.version>
-        <jackson-datatype-joda.version>2.18.2</jackson-datatype-joda.version>
-        <springdoc.openapi.starter.version>2.7.0</springdoc.openapi.starter.version>
+        <joda-time.version>2.14.0</joda-time.version>
+        <jackson-datatype-joda.version>2.19.3</jackson-datatype-joda.version>
+        <springdoc.openapi.starter.version>2.8.10</springdoc.openapi.starter.version>
         <swagger.version>3.0.0</swagger.version>
-        <guava.version>33.4.0-jre</guava.version>
-        <okhttp.version>4.12.0</okhttp.version>
-        <webdrivermanager.version>5.9.2</webdrivermanager.version>
+        <guava.version>33.4.8-jre</guava.version>
+        <okhttp.version>5.1.0</okhttp.version>
+        <webdrivermanager.version>6.2.0</webdrivermanager.version>
     </properties>
     <dependencies>
         <dependency>
@@ -49,6 +49,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson-datatype-joda.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
